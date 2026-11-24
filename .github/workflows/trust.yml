@@ -2,6 +2,9 @@ name: Trust test (one-off)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [trust-test]
+    paths: [trust.py, .github/workflows/trust.yml]
 
 permissions:
   contents: write

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated_utc": "2026-11-24T21:36:08+00:00",
+  "updated_utc": "2026-11-24T21:40:07+00:00",
   "cost_per_switch": 0.002,
   "window": 20,
   "warmup_days": 252,
@@ -16,8 +16,8 @@
    ],
    "kind": "twins",
    "skip": true,
-   "years": 0.5,
-   "badge": "new"
+   "badge": "new",
+   "years": 0.5
   },
   {
    "id": "V-MA",
@@ -70,6 +70,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -124,6 +125,7 @@
     2.0,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -178,6 +180,7 @@
     1.75,
     2.5
    ],
+   "band_now": 1.75,
    "badge": "red"
   },
   {
@@ -233,6 +236,7 @@
     1.25,
     1.5
    ],
+   "band_now": 1.5,
    "badge": "red"
   },
   {
@@ -286,6 +290,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -340,6 +345,7 @@
     2.0,
     2.5
    ],
+   "band_now": 2.0,
    "badge": "red"
   },
   {
@@ -395,6 +401,7 @@
     1.75,
     2.5
    ],
+   "band_now": 1.75,
    "badge": "red"
   },
   {
@@ -449,6 +456,7 @@
     1.0,
     1.25
    ],
+   "band_now": 1.0,
    "badge": "green"
   },
   {
@@ -503,6 +511,7 @@
     1.0,
     2.5
    ],
+   "band_now": 1.0,
    "badge": "green"
   },
   {
@@ -558,6 +567,7 @@
     1.25,
     2.5
    ],
+   "band_now": 1.0,
    "badge": "red"
   },
   {
@@ -611,6 +621,7 @@
    "bands_used": [
     1.0
    ],
+   "band_now": 1.0,
    "badge": "red"
   },
   {
@@ -664,6 +675,7 @@
    "bands_used": [
     1.0
    ],
+   "band_now": 1.0,
    "badge": "amber"
   },
   {
@@ -719,6 +731,7 @@
     1.25,
     1.5
    ],
+   "band_now": 1.0,
    "badge": "red"
   },
   {
@@ -772,6 +785,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "amber"
   },
   {
@@ -825,6 +839,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "green"
   },
   {
@@ -879,6 +894,7 @@
     1.5,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -935,6 +951,7 @@
     2.0,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -989,6 +1006,7 @@
     1.75,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -1044,6 +1062,7 @@
     1.5,
     1.75
    ],
+   "band_now": 1.5,
    "badge": "red"
   },
   {
@@ -1098,6 +1117,7 @@
     1.0,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -1151,6 +1171,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -1204,6 +1225,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "green"
   },
   {
@@ -1246,6 +1268,7 @@
     1.0,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "red"
   },
   {
@@ -1301,6 +1324,7 @@
     1.25,
     1.5
    ],
+   "band_now": 1.5,
    "badge": "green"
   },
   {
@@ -1355,6 +1379,7 @@
     1.0,
     1.25
    ],
+   "band_now": 1.0,
    "badge": "red"
   },
   {
@@ -1411,6 +1436,7 @@
     1.75,
     2.5
    ],
+   "band_now": 1.0,
    "badge": "red"
   },
   {
@@ -1467,6 +1493,7 @@
     2.0,
     2.5
    ],
+   "band_now": 1.75,
    "badge": "amber"
   },
   {
@@ -1521,6 +1548,7 @@
     2.0,
     2.5
    ],
+   "band_now": 2.5,
    "badge": "amber"
   },
   {
@@ -1574,6 +1602,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "amber"
   },
   {
@@ -1631,6 +1660,7 @@
     2.0,
     2.5
    ],
+   "band_now": 1.75,
    "badge": "red"
   },
   {
@@ -1684,6 +1714,7 @@
    "bands_used": [
     2.5
    ],
+   "band_now": 2.5,
    "badge": "amber"
   }
  ]

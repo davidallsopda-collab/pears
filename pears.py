@@ -80,9 +80,22 @@ def build(close, p):
     return out
 
 
-def summary_row(d):
+def trusted_bands():
+    """The setting the weekly tough test is using for each pair (docs/trust.json)."""
+    try:
+        with open(os.path.join(OUT_DIR, "trust.json"), encoding="utf-8") as f:
+            return {p["id"]: p.get("band_now") for p in json.load(f)["pairs"] if p.get("band_now")}
+    except Exception:
+        return {}
+
+
+def summary_row(d, band=None):
     r = d.get("rotation") or {}
     h = d["history"]
+    now = r.get("now_holding")
+    if band:
+        _, _, now = pairs.rotate(h[d["a"]], h[d["b"]], h["z"], band)
+        now = {"A": d["a"], "B": d["b"]}.get(now, now)
     # 60-day mini line of the ratio for the home screen
     spark = [v for v in h["ratio"][-60:]]
     return {
@@ -90,7 +103,7 @@ def summary_row(d):
         "days": d["days"], "from": h["dates"][0],
         "z": d["z"], "signal": d["signal"],
         "corr": d["stats"]["corr"], "corr30": d["stats"]["corr30"], "half_life": d["half_life"],
-        "best_band": r.get("best_band"), "now_holding": r.get("now_holding"),
+        "best_band": band or r.get("best_band"), "now_holding": now,
         "test_return": r.get("test_return"), "hold_a": r.get("hold_a"), "hold_b": r.get("hold_b"),
         "hold_mix": r.get("hold_mix"), "tone": r.get("tone"), "verdict": r.get("verdict"),
         "test_trades": r.get("test_trades"), "test_wins": r.get("test_wins"),
@@ -109,6 +122,7 @@ def main():
     close = load_all([s for p in plist for s in (p["a"], p["b"])])
 
     os.makedirs(os.path.join(OUT_DIR, "data"), exist_ok=True)
+    tb = trusted_bands()
     rows = []
     for p in plist:
         try:
@@ -118,7 +132,7 @@ def main():
             continue
         with open(os.path.join(OUT_DIR, "data", d["id"] + ".json"), "w", encoding="utf-8") as f:
             json.dump(d, f, separators=(",", ":"))
-        rows.append(summary_row(d))
+        rows.append(summary_row(d, tb.get(d["id"])))
         print(f"{d['id']}: {d['days']} days, in step {d['stats']['corr']}, test {rows[-1]['test_return']} ({rows[-1]['verdict']})")
 
     if not rows:

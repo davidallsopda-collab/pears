@@ -45,6 +45,12 @@
   .verdict { display:flex; align-items:center; gap:8px; margin-top:8px; font-size:13px; font-weight:700; }
   .dot { width:12px; height:12px; border-radius:50%; flex:none; }
   .crown { border-width:2px; }
+  .badge { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:900; letter-spacing:.06em; border-radius:999px; padding:4px 10px; margin-bottom:8px; }
+  .ybar { display:flex; align-items:center; gap:8px; margin:6px 0; font-size:12px; font-weight:700; }
+  .ybar .yr { width:38px; color:var(--dim); }
+  .ybar .bars { flex:1; display:flex; flex-direction:column; gap:3px; }
+  .ybar .bars i { display:block; height:9px; border-radius:5px; min-width:3px; }
+  .ybar .nums { width:92px; text-align:right; line-height:1.15; }
   .best { font-size:11px; font-weight:900; letter-spacing:.08em; color:var(--green); margin-bottom:6px; }
 
   /* detail */
@@ -97,6 +103,17 @@
 
 <script>
 var A_C = "#3b82f6", B_C = "#f97316";
+var TRUST = {};
+var BADGE = {
+  green: { c: "#4ade80", t: "🟢 TRUSTED", d: "Passed the tough 4-year test" },
+  amber: { c: "#fbbf24", t: "🟡 MAYBE", d: "Some edge, not convincing yet" },
+  red:   { c: "#f87171", t: "🔴 FLUKE / NO EDGE", d: "Didn't survive the tough test" },
+  new:   { c: "#94a3b8", t: "⚪ TOO NEW", d: "Not enough history to test" }
+};
+function badgeEl(code) {
+  var b = BADGE[code] || BADGE.new;
+  return h("span", { class: "badge", style: "color:" + b.c + ";background:" + b.c + "22;border:1px solid " + b.c + "66", text: b.t });
+}
 var TONE_C = { works: "#4ade80", opposite: "#f87171", flip: "#fbbf24", few: "#94a3b8" };
 var TONE_WORD = { works: "Held up on unseen data", opposite: "Fell apart on unseen data", flip: "Mixed on unseen data", few: "Too few trades to judge" };
 
@@ -135,8 +152,9 @@ function setUpdated(el, iso) {
 
 /* ---------- home ---------- */
 function rankScore(p) {
-  var t = { works: 3, flip: 2, few: 1, opposite: 0 }[p.tone] || 0;
-  return t * 1000 + (p.test_return || 0);
+  var tr = TRUST[p.id];
+  var b = tr ? { green: 3, amber: 2, new: 1, red: 0 }[tr.badge] : 1;
+  return b * 1000 + (tr && tr.beats_monkeys != null ? tr.beats_monkeys : 0);
 }
 function spark(vals, holdCol) {
   var W = 300, H = 46, v = vals.filter(function (x) { return x != null; });
@@ -171,9 +189,9 @@ function renderHome(S) {
   list.forEach(function (p, idx) {
     var hb = p.now_holding === p.b, hc = p.now_holding ? (hb ? B_C : A_C) : "#334155";
     var tc = TONE_C[p.tone] || "#94a3b8";
-    var card = h("a", { class: "card pcard" + (idx === 0 ? " crown" : ""), href: "#" + p.id,
-                        style: idx === 0 ? "border-color:" + tc : "" }, [
-      idx === 0 ? h("div", { class: "best", text: KIND === "opposites" ? "★ BEST OPPOSITES PAIR" : KIND === "twins" ? "★ BEST TWINS PAIR" : "★ BEST PAIR RIGHT NOW" }) : null,
+    var tr = TRUST[p.id], bcode = tr ? tr.badge : "new", bc = (BADGE[bcode] || BADGE.new).c;
+    var card = h("a", { class: "card pcard", href: "#" + p.id, style: bcode === "green" ? "border-color:" + bc : "" }, [
+      badgeEl(bcode),
       h("div", { class: "ptop" }, [
         h("div", {}, [
           h("div", { class: "pname" }, [h("span", { class: "a", text: p.names[p.a] }), " / ", h("span", { class: "b", text: p.names[p.b] })]),
@@ -182,18 +200,26 @@ function renderHome(S) {
         h("span", { class: "hold", style: "background:" + hc, text: p.now_holding ? "HOLD " + p.now_holding : "WAIT" })
       ]),
       h("div", { class: "pmid" }, [h("div", { class: "spark" }, [spark(p.spark, hc)])]),
-      h("div", { class: "ptiles" }, [
+      (tr && !tr.skip) ? h("div", { class: "ptiles" }, [
+        h("div", { class: "mini" }, [h("div", { class: "l", text: "Beat monkeys" }), h("div", { class: "v", style: "color:" + (tr.beats_monkeys >= 90 ? "#4ade80" : tr.beats_monkeys >= 70 ? "#fbbf24" : "#f87171"), text: tr.beats_monkeys + "%" })]),
+        h("div", { class: "mini" }, [h("div", { class: "l", text: "Years won" }), h("div", { class: "v", text: tr.years_beat_both + "/" + tr.years_total })]),
+        h("div", { class: "mini" }, [h("div", { class: "l", text: "In step" }), h("div", { class: "v", text: p.corr == null ? "-" : Math.round(p.corr * 100) + "%" })])
+      ]) : h("div", { class: "ptiles" }, [
         h("div", { class: "mini" }, [h("div", { class: "l", text: "In step" }), h("div", { class: "v", text: p.corr == null ? "-" : Math.round(p.corr * 100) + "%" })]),
         h("div", { class: "mini" }, [h("div", { class: "l", text: "Snaps back" }), h("div", { class: "v", text: p.half_life ? "~" + Math.round(p.half_life) + "d" : "-" })]),
         h("div", { class: "mini" }, [h("div", { class: "l", text: "Unseen test" }), h("div", { class: "v " + gc(p.test_return), text: pc0(p.test_return) })])
       ]),
-      h("div", { class: "verdict" }, [h("span", { class: "dot", style: "background:" + tc }), h("span", { style: "color:" + tc, text: TONE_WORD[p.tone] || "" })])
+      (tr && !tr.skip) ? h("div", { class: "verdict" }, [h("span", { class: "dot", style: "background:" + bc }),
+        h("span", {}, [h("span", { class: "dim", text: Math.round(tr.test_years) + " yrs: " }),
+          h("span", { class: gc(tr.rule_pct - tr.both_pct), text: pc0(tr.rule_pct) }), h("span", { class: "dim", text: " v " + pc0(tr.both_pct) + " holding both" })])])
+        : h("div", { class: "verdict" }, [h("span", { class: "dot", style: "background:#94a3b8" }), h("span", { class: "dim", text: "Too new for the tough test" })])
     ]);
     app.appendChild(card);
   });
 
   app.appendChild(h("details", {}, [
     h("summary", { text: "What do the numbers mean?" }),
+    h("p", { text: "Badges come from the tough test, re-run every Saturday on up to 5 years of prices. Every 3 months it picks its setting using only the past, then trades the next 3 months blind, paying 0.2% every time it switches. 🟢 Trusted = beat at least 90% of 1,000 random switchers (monkeys), clearly beat holding both, and won at least 3 years in 4. 🟡 Maybe = some edge. 🔴 = no better than random, or a one-year wonder." }),
     h("p", { text: "Each card is two stocks that usually move together. The line is the first stock's price divided by the second's, over the last 3 months. Its colour shows what the switch rule would hold now: blue = the first stock, orange = the second." }),
     h("p", { text: "In step: how often they move together (100% = always). Snaps back: roughly how many trading days it takes for a stretched gap to halve. Smaller is better for pair trading." }),
     h("p", { text: "Unseen test: the switch rule's setting is picked using the first half of the history, then tested on the second half it never saw. Green dot = it beat holding either stock. Amber = beat holding both but not the best one. Red = fell apart." }),
@@ -293,7 +319,8 @@ function renderDetail(d) {
   var app = document.getElementById("app"); app.innerHTML = "";
   var bands = (rot.table || []).map(function (x) { return x.band; });
   if (!bands.length) bands = [1, 1.5, 2];
-  if (BAND === null) BAND = rot.best_band || 1.5;
+  var trN = TRUST[d.id], star = (trN && trN.band_now) || rot.best_band;
+  if (BAND === null) BAND = star || 1.5;
   var sw = runSwitch(H, a, b, BAND);
 
   var nowC = sw.now === b ? B_C : sw.now === a ? A_C : "#334155";
@@ -310,7 +337,7 @@ function renderDetail(d) {
   var chips = h("div", { class: "chips" });
   bands.forEach(function (x) {
     chips.appendChild(h("button", { class: "chip" + (x === BAND ? " on" : ""), type: "button", onclick: function () { BAND = x; renderDetail(d); } },
-      ["±" + x, x === rot.best_band ? h("span", { class: "star", text: "★" }) : null]));
+      ["±" + x, x === star ? h("span", { class: "star", text: "★" }) : null]));
   });
   var holdTile = function (label, v, mine, col) {
     return h("div", { class: "tile" + (mine ? (v >= 100 ? " win" : " lose") : "") }, [
@@ -337,9 +364,38 @@ function renderDetail(d) {
   ]));
   app.appendChild(chartCard);
 
-  if (rot.verdict) {
+  var tr = TRUST[d.id];
+  if (tr && !tr.skip) {
+    var bc = (BADGE[tr.badge] || BADGE.new).c, mk = tr.beats_monkeys;
+    var tcard = h("div", { class: "card", style: "border-color:" + bc }, [
+      badgeEl(tr.badge),
+      h("div", { style: "font-size:15px;font-weight:800;margin-bottom:10px", text: (BADGE[tr.badge] || BADGE.new).d }),
+      h("div", { class: "three" }, [
+        h("div", { class: "tile " + (tr.rule_pct > tr.both_pct ? "win" : "lose") }, [h("div", { class: "l", text: "Switching" }), h("div", { class: "v " + gc(tr.rule_pct), text: pc0(tr.rule_pct) })]),
+        h("div", { class: "tile" }, [h("div", { class: "l", text: "Hold both" }), h("div", { class: "v " + gc(tr.both_pct), text: pc0(tr.both_pct) })]),
+        h("div", { class: "tile" }, [h("div", { class: "l", text: "Monkeys beaten" }), h("div", { class: "v", style: "color:" + (mk >= 90 ? "#4ade80" : mk >= 70 ? "#fbbf24" : "#f87171"), text: mk + "%" })])
+      ]),
+      h("div", { class: "wbar", style: "width:100%;height:12px;margin:12px 0 4px" }, [h("i", { style: "width:" + mk + "%;background:" + (mk >= 90 ? "#4ade80" : mk >= 70 ? "#fbbf24" : "#f87171") })]),
+      h("div", { class: "upd", text: "🐒 beat " + mk + "% of 1,000 random switchers · " + tr.switches_per_year + " switches a year · 0.2% cost each" }),
+      h("div", { class: "sect", style: "margin:14px 0 4px", text: "YEAR BY YEAR" }),
+      h("div", { class: "legend", style: "padding:0 0 4px" }, [h("span", {}, [h("i", { style: "background:#4ade80" }), "switching"]), h("span", {}, [h("i", { style: "background:#64748b" }), "holding both"])])
+    ]);
+    var ymax = Math.max.apply(null, tr.by_year.map(function (y) { return Math.max(Math.abs(y.rule), Math.abs(y.both)); }).concat([1]));
+    tr.by_year.forEach(function (y) {
+      tcard.appendChild(h("div", { class: "ybar" }, [
+        h("span", { class: "yr", text: (y.beat ? "✅ " : "❌ ") + "'" + y.year.slice(2) }),
+        h("div", { class: "bars" }, [
+          h("i", { style: "width:" + Math.abs(y.rule) / ymax * 100 + "%;background:" + (y.rule >= 0 ? "#4ade80" : "#f87171") }),
+          h("i", { style: "width:" + Math.abs(y.both) / ymax * 100 + "%;background:" + (y.both >= 0 ? "#64748b" : "#7f1d1d") })
+        ]),
+        h("div", { class: "nums" }, [h("div", { class: gc(y.rule), text: pc0(y.rule) }), h("div", { class: "dim", text: pc0(y.both) })])
+      ]));
+    });
+    app.appendChild(h("div", { class: "sect", text: "★ THE TOUGH TEST (" + Math.round(tr.test_years) + " YEARS)" }));
+    app.appendChild(tcard);
+  } else if (rot.verdict) {
     var tc = TONE_C[rot.tone] || "#94a3b8";
-    app.appendChild(h("div", { class: "sect", text: "★ TESTED ON DATA IT HADN'T SEEN" }));
+    app.appendChild(h("div", { class: "sect", text: "★ QUICK TEST (TOO NEW FOR THE TOUGH ONE)" }));
     app.appendChild(h("div", { class: "card", style: "border-color:" + tc }, [
       h("div", { style: "font-size:16px;font-weight:800;color:" + tc + ";margin-bottom:8px", text: rot.verdict }),
       h("div", { class: "three" }, [
@@ -384,7 +440,7 @@ function renderDetail(d) {
   app.appendChild(h("details", {}, [
     h("summary", { text: "How it works (the words)" }),
     h("p", { text: "The line is " + na + "'s price divided by " + nb + "'s, like " + a + "/" + b + " on TradingView. Up means " + na + " is pulling ahead, down means " + nb + " is." }),
-    h("p", { text: "The grey band is the normal zone for the last " + d.window + " days. The buttons set how wide it is. When the line pokes out of the top, " + na + " has run too far ahead, so the rule switches to " + nb + " (orange). Out of the bottom, it switches to " + na + " (blue). ★ = the setting that did best on the first half of the history." }),
+    h("p", { text: "The grey band is the normal zone for the last " + d.window + " days. The buttons set how wide it is (★ = the setting the tough test is using right now). When the line pokes out of the top, " + na + " has run too far ahead, so the rule switches to " + nb + " (orange). Out of the bottom, it switches to " + na + " (blue). ★ = the setting that did best on the first half of the history." }),
     h("p", { text: "Stretch score: how far outside normal it is right now. Minus = " + nb + " looks cheap, plus = " + na + " looks cheap." }),
     h("p", { text: "The unseen test picks the best setting using only " + shortDate(rot.train_from || H.dates[0], true) + " to " + shortDate(rot.split || d.last_date, true) + ", then checks how it did afterwards." }),
     h("p", { text: "Today: " + nb + " usually moves about " + (s.beta || 0).toFixed(1) + "x " + na + "'s move. \"vs usual\" is how many % points it's ahead or behind that. They move in step " + Math.round((s.corr || 0) * 100) + "% overall, " + Math.round((s.corr30 || 0) * 100) + "% over the last 30 days." + (d.half_life ? " A stretched gap typically halves in about " + Math.round(d.half_life) + " trading days." : "") }),
@@ -397,12 +453,21 @@ function route() {
   var id = decodeURIComponent(location.hash.replace(/^#/, ""));
   window.scrollTo(0, 0);
   if (!id) {
-    fetchJSON("summary.json").then(renderHome).catch(function () {
+    Promise.all([fetchJSON("summary.json"), fetchJSON("trust.json").catch(function () { return null; })])
+      .then(function (r) {
+        TRUST = {};
+        if (r[1]) r[1].pairs.forEach(function (x) { TRUST[x.id] = x; });
+        renderHome(r[0]);
+      }).catch(function () {
       document.getElementById("app").textContent = "No data yet - it fills in while the US market is open.";
     });
   } else {
     if (!DETAIL || DETAIL.id !== id) BAND = null;
-    fetchJSON("data/" + id + ".json").then(function (d) { DETAIL = d; renderDetail(d); })
+    Promise.all([fetchJSON("data/" + id + ".json"), Object.keys(TRUST).length ? null : fetchJSON("trust.json").catch(function () { return null; })])
+      .then(function (r) {
+        if (r[1]) r[1].pairs.forEach(function (x) { TRUST[x.id] = x; });
+        DETAIL = r[0]; renderDetail(r[0]);
+      })
       .catch(function () { location.hash = ""; });
   }
 }

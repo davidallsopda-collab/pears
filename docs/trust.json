@@ -1,0 +1,1690 @@
+{
+ "meta": {
+  "updated_utc": "2026-11-24T21:36:08+00:00",
+  "cost_per_switch": 0.002,
+  "window": 20,
+  "warmup_days": 252,
+  "retune_days": 63,
+  "monkeys": 1000
+ },
+ "pairs": [
+  {
+   "id": "TSLA-SPCX",
+   "names": [
+    "Tesla",
+    "SpaceX"
+   ],
+   "kind": "twins",
+   "skip": true,
+   "years": 0.5,
+   "badge": "new"
+  },
+  {
+   "id": "V-MA",
+   "names": [
+    "Visa",
+    "Mastercard"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 103.9,
+   "rule_per_year": 20.1,
+   "hold_a_pct": 108.7,
+   "hold_b_pct": 93.0,
+   "both_pct": 100.9,
+   "switches": 11,
+   "switches_per_year": 2.8,
+   "monkey_median_pct": 96.4,
+   "beats_monkeys": 67,
+   "trust": "meh",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 33.0,
+     "both": 25.1,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 21.8,
+     "both": 24.3,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 8.0,
+     "both": 11.1,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 18.5,
+     "both": 18.5,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "KO-PEP",
+   "names": [
+    "Coca-Cola",
+    "Pepsi"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 17.0,
+   "rule_per_year": 4.1,
+   "hold_a_pct": 70.7,
+   "hold_b_pct": -10.9,
+   "both_pct": 29.9,
+   "switches": 12,
+   "switches_per_year": 3.1,
+   "monkey_median_pct": 21.0,
+   "beats_monkeys": 44,
+   "trust": "no edge",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 0.2,
+     "both": -3.0,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 2.6,
+     "both": -1.0,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": -7.5,
+     "both": 7.9,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 25.7,
+     "both": 23.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "XOM-CVX",
+   "names": [
+    "Exxon",
+    "Chevron"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 45.8,
+   "rule_per_year": 10.2,
+   "hold_a_pct": 65.7,
+   "hold_b_pct": 38.3,
+   "both_pct": 52.0,
+   "switches": 25,
+   "switches_per_year": 6.4,
+   "monkey_median_pct": 44.4,
+   "beats_monkeys": 54,
+   "trust": "meh",
+   "years_beat_both": 1,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": -9.2,
+     "both": -6.9,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 2.1,
+     "both": 4.9,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 2.5,
+     "both": 12.5,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 49.7,
+     "both": 35.6,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.75,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "SHEL-BP",
+   "names": [
+    "Shell",
+    "BP"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 50.6,
+   "rule_per_year": 11.1,
+   "hold_a_pct": 88.9,
+   "hold_b_pct": 50.0,
+   "both_pct": 69.5,
+   "switches": 40,
+   "switches_per_year": 10.3,
+   "monkey_median_pct": 56.2,
+   "beats_monkeys": 40,
+   "trust": "no edge",
+   "years_beat_both": 1,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 10.4,
+     "both": 15.1,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": -12.2,
+     "both": -6.6,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 12.9,
+     "both": 22.1,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 34.8,
+     "both": 26.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25,
+    1.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "HD-LOW",
+   "names": [
+    "Home Depot",
+    "Lowe's"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 4.7,
+   "rule_per_year": 1.2,
+   "hold_a_pct": 22.4,
+   "hold_b_pct": 24.1,
+   "both_pct": 23.2,
+   "switches": 6,
+   "switches_per_year": 1.5,
+   "monkey_median_pct": 22.1,
+   "beats_monkeys": 10,
+   "trust": "no edge",
+   "years_beat_both": 0,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 10.7,
+     "both": 13.5,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 10.1,
+     "both": 15.3,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": -10.1,
+     "both": -4.8,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": -1.9,
+     "both": 0.1,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "NVDA-AMD",
+   "names": [
+    "Nvidia",
+    "AMD"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 190.9,
+   "rule_per_year": 31.5,
+   "hold_a_pct": 925.2,
+   "hold_b_pct": 540.5,
+   "both_pct": 732.9,
+   "switches": 11,
+   "switches_per_year": 2.8,
+   "monkey_median_pct": 700.7,
+   "beats_monkeys": 3,
+   "trust": "no edge",
+   "years_beat_both": 0,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 86.9,
+     "both": 188.2,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": -7.3,
+     "both": 83.0,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 53.5,
+     "both": 56.2,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 8.7,
+     "both": 33.7,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    2.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "AVGO-MRVL",
+   "names": [
+    "Broadcom",
+    "Marvell"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 169.4,
+   "rule_per_year": 29.0,
+   "hold_a_pct": 473.2,
+   "hold_b_pct": 258.6,
+   "both_pct": 365.9,
+   "switches": 20,
+   "switches_per_year": 5.1,
+   "monkey_median_pct": 342.0,
+   "beats_monkeys": 21,
+   "trust": "no edge",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 102.6,
+     "both": 87.4,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 122.3,
+     "both": 103.5,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 15.1,
+     "both": 12.8,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -48.5,
+     "both": 17.3,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.5,
+    1.75,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "JPM-BAC",
+   "names": [
+    "JPMorgan",
+    "Bank of America"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 139.8,
+   "rule_per_year": 25.2,
+   "hold_a_pct": 165.1,
+   "hold_b_pct": 64.4,
+   "both_pct": 114.7,
+   "switches": 53,
+   "switches_per_year": 13.6,
+   "monkey_median_pct": 89.1,
+   "beats_monkeys": 94,
+   "trust": "strong",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 13.6,
+     "both": 16.6,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 54.0,
+     "both": 37.8,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 37.5,
+     "both": 32.1,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -6.2,
+     "both": -6.3,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25
+   ],
+   "badge": "green"
+  },
+  {
+   "id": "GS-MS",
+   "names": [
+    "Goldman",
+    "Morgan Stanley"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 175.7,
+   "rule_per_year": 29.7,
+   "hold_a_pct": 155.2,
+   "hold_b_pct": 121.9,
+   "both_pct": 138.5,
+   "switches": 52,
+   "switches_per_year": 13.3,
+   "monkey_median_pct": 114.4,
+   "beats_monkeys": 98,
+   "trust": "strong",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 9.6,
+     "both": 14.0,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 48.6,
+     "both": 44.9,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 54.8,
+     "both": 51.1,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 5.4,
+     "both": -7.8,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    2.5
+   ],
+   "badge": "green"
+  },
+  {
+   "id": "LMT-NOC",
+   "names": [
+    "Lockheed",
+    "Northrop"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 25.1,
+   "rule_per_year": 5.9,
+   "hold_a_pct": 34.1,
+   "hold_b_pct": 9.6,
+   "both_pct": 21.9,
+   "switches": 24,
+   "switches_per_year": 6.2,
+   "monkey_median_pct": 15.6,
+   "beats_monkeys": 66,
+   "trust": "meh",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": -3.9,
+     "both": -7.2,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 0.5,
+     "both": 5.4,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 4.4,
+     "both": 13.6,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 22.3,
+     "both": 7.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "UPS-FDX",
+   "names": [
+    "UPS",
+    "FedEx"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 40.1,
+   "rule_per_year": 9.0,
+   "hold_a_pct": -22.5,
+   "hold_b_pct": 134.7,
+   "both_pct": 56.1,
+   "switches": 51,
+   "switches_per_year": 13.1,
+   "monkey_median_pct": 20.4,
+   "beats_monkeys": 72,
+   "trust": "meh",
+   "years_beat_both": 1,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 16.6,
+     "both": 19.5,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": -7.9,
+     "both": -1.3,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 9.9,
+     "both": -3.3,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 20.2,
+     "both": 24.3,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.0
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "DAL-UAL",
+   "names": [
+    "Delta",
+    "United"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 179.0,
+   "rule_per_year": 30.1,
+   "hold_a_pct": 164.7,
+   "hold_b_pct": 180.8,
+   "both_pct": 172.8,
+   "switches": 48,
+   "switches_per_year": 12.3,
+   "monkey_median_pct": 146.5,
+   "beats_monkeys": 71,
+   "trust": "meh",
+   "years_beat_both": 1,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 11.9,
+     "both": 17.4,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 83.2,
+     "both": 94.8,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 34.8,
+     "both": 18.0,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 8.6,
+     "both": 9.5,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.0
+   ],
+   "badge": "amber"
+  },
+  {
+   "id": "BHP-RIO",
+   "names": [
+    "BHP",
+    "Rio Tinto"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 30.7,
+   "rule_per_year": 7.1,
+   "hold_a_pct": 33.0,
+   "hold_b_pct": 31.2,
+   "both_pct": 32.1,
+   "switches": 36,
+   "switches_per_year": 9.2,
+   "monkey_median_pct": 22.0,
+   "beats_monkeys": 72,
+   "trust": "meh",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 18.0,
+     "both": 14.5,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": -24.8,
+     "both": -19.7,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 36.2,
+     "both": 34.9,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 7.3,
+     "both": 5.9,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25,
+    1.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "PG-CL",
+   "names": [
+    "P&G",
+    "Colgate"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 41.7,
+   "rule_per_year": 9.3,
+   "hold_a_pct": 25.4,
+   "hold_b_pct": 37.3,
+   "both_pct": 31.4,
+   "switches": 13,
+   "switches_per_year": 3.3,
+   "monkey_median_pct": 27.4,
+   "beats_monkeys": 82,
+   "trust": "promising",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": -0.7,
+     "both": 1.2,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 25.9,
+     "both": 15.3,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": -10.9,
+     "both": -11.0,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 28.1,
+     "both": 28.0,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "amber"
+  },
+  {
+   "id": "COST-WMT",
+   "names": [
+    "Costco",
+    "Walmart"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 260.9,
+   "rule_per_year": 39.0,
+   "hold_a_pct": 147.3,
+   "hold_b_pct": 188.2,
+   "both_pct": 167.8,
+   "switches": 11,
+   "switches_per_year": 2.8,
+   "monkey_median_pct": 160.5,
+   "beats_monkeys": 96,
+   "trust": "strong",
+   "years_beat_both": 4,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 33.1,
+     "both": 30.8,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 73.7,
+     "both": 56.9,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 24.7,
+     "both": 10.1,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 28.5,
+     "both": 23.3,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "green"
+  },
+  {
+   "id": "GOOGL-GOOG",
+   "names": [
+    "Google A",
+    "Google C"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 215.4,
+   "rule_per_year": 34.3,
+   "hold_a_pct": 215.7,
+   "hold_b_pct": 210.9,
+   "both_pct": 213.3,
+   "switches": 16,
+   "switches_per_year": 4.1,
+   "monkey_median_pct": 202.8,
+   "beats_monkeys": 100,
+   "trust": "strong",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 56.3,
+     "both": 56.9,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 37.6,
+     "both": 37.2,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 65.7,
+     "both": 65.6,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -10.9,
+     "both": -11.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.5,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "XOM-FSLR",
+   "names": [
+    "Exxon",
+    "First Solar"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 20.3,
+   "rule_per_year": 4.9,
+   "hold_a_pct": 65.7,
+   "hold_b_pct": -5.6,
+   "both_pct": 30.1,
+   "switches": 14,
+   "switches_per_year": 3.6,
+   "monkey_median_pct": 20.9,
+   "beats_monkeys": 50,
+   "trust": "no edge",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 46.7,
+     "both": 7.6,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 0.4,
+     "both": 5.5,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 34.3,
+     "both": 28.2,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -40.8,
+     "both": -6.8,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.5,
+    1.75,
+    2.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "XLE-ICLN",
+   "names": [
+    "Oil & gas",
+    "Clean energy"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 3.4,
+   "rule_per_year": 0.9,
+   "hold_a_pct": 56.8,
+   "hold_b_pct": -25.9,
+   "both_pct": 15.4,
+   "switches": 11,
+   "switches_per_year": 2.8,
+   "monkey_median_pct": 4.7,
+   "beats_monkeys": 49,
+   "trust": "no edge",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 0.3,
+     "both": -8.3,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": -16.5,
+     "both": -10.2,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 34.7,
+     "both": 25.4,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -11.1,
+     "both": 8.7,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.75,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "DAL-XOM",
+   "names": [
+    "Delta",
+    "Exxon"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 31.2,
+   "rule_per_year": 7.2,
+   "hold_a_pct": 164.7,
+   "hold_b_pct": 65.7,
+   "both_pct": 115.2,
+   "switches": 32,
+   "switches_per_year": 8.2,
+   "monkey_median_pct": 90.4,
+   "beats_monkeys": 20,
+   "trust": "no edge",
+   "years_beat_both": 0,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": -10.8,
+     "both": 10.5,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 0.4,
+     "both": 29.9,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 10.7,
+     "both": 17.6,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 26.9,
+     "both": 28.0,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.25,
+    1.5,
+    1.75
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "TSLA-F",
+   "names": [
+    "Tesla",
+    "Ford"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 92.0,
+   "rule_per_year": 18.2,
+   "hold_a_pct": 212.4,
+   "hold_b_pct": 39.9,
+   "both_pct": 126.1,
+   "switches": 12,
+   "switches_per_year": 3.1,
+   "monkey_median_pct": 100.9,
+   "beats_monkeys": 47,
+   "trust": "no edge",
+   "years_beat_both": 1,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 66.7,
+     "both": 72.6,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": -20.2,
+     "both": 24.8,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 5.7,
+     "both": 32.3,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 57.3,
+     "both": -9.2,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "SPY-GLD",
+   "names": [
+    "Stock market",
+    "Gold"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 81.2,
+   "rule_per_year": 16.5,
+   "hold_a_pct": 96.8,
+   "hold_b_pct": 94.6,
+   "both_pct": 95.7,
+   "switches": 9,
+   "switches_per_year": 2.3,
+   "monkey_median_pct": 89.7,
+   "beats_monkeys": 41,
+   "trust": "no edge",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 37.0,
+     "both": 19.2,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 28.4,
+     "both": 26.3,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 22.0,
+     "both": 39.7,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": -16.9,
+     "both": -6.1,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "SPY-TLT",
+   "names": [
+    "Stock market",
+    "Bonds"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 141.2,
+   "rule_per_year": 25.3,
+   "hold_a_pct": 96.8,
+   "hold_b_pct": -6.7,
+   "both_pct": 45.0,
+   "switches": 10,
+   "switches_per_year": 2.6,
+   "monkey_median_pct": 32.5,
+   "beats_monkeys": 100,
+   "trust": "strong",
+   "years_beat_both": 4,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 24.9,
+     "both": 13.8,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 37.3,
+     "both": 9.0,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 23.3,
+     "both": 11.0,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 14.8,
+     "both": 1.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "green"
+  },
+  {
+   "id": "GLD-IBIT",
+   "names": [
+    "Gold",
+    "Bitcoin"
+   ],
+   "kind": "opposites",
+   "from": "2025-02-11",
+   "to": "2026-11-24",
+   "test_years": 1.8,
+   "rule_pct": -41.1,
+   "rule_per_year": -25.7,
+   "hold_a_pct": 21.7,
+   "hold_b_pct": -37.6,
+   "both_pct": -7.9,
+   "switches": 10,
+   "switches_per_year": 5.6,
+   "monkey_median_pct": -14.2,
+   "beats_monkeys": 13,
+   "trust": "no edge",
+   "years_beat_both": 0,
+   "years_total": 2,
+   "by_year": [
+    {
+     "year": "2025",
+     "rule": -14.5,
+     "both": 20.0,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": -32.9,
+     "both": -26.0,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "GLD-GDX",
+   "names": [
+    "Gold",
+    "Gold miners"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 209.9,
+   "rule_per_year": 33.7,
+   "hold_a_pct": 94.6,
+   "hold_b_pct": 156.1,
+   "both_pct": 125.3,
+   "switches": 46,
+   "switches_per_year": 11.8,
+   "monkey_median_pct": 101.7,
+   "beats_monkeys": 97,
+   "trust": "strong",
+   "years_beat_both": 4,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 11.4,
+     "both": 9.0,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 24.4,
+     "both": 19.6,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 105.1,
+     "both": 103.0,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": -1.8,
+     "both": -17.5,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25,
+    1.5
+   ],
+   "badge": "green"
+  },
+  {
+   "id": "GLD-GOLD",
+   "names": [
+    "Gold",
+    "Barrick"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 63.9,
+   "rule_per_year": 13.5,
+   "hold_a_pct": 94.6,
+   "hold_b_pct": 25.3,
+   "both_pct": 59.9,
+   "switches": 43,
+   "switches_per_year": 11.0,
+   "monkey_median_pct": 38.2,
+   "beats_monkeys": 64,
+   "trust": "meh",
+   "years_beat_both": 3,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 11.6,
+     "both": 2.2,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": -18.3,
+     "both": 11.1,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 76.0,
+     "both": 44.6,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 0.6,
+     "both": -3.9,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "GLD-SLV",
+   "names": [
+    "Gold",
+    "Silver"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 58.7,
+   "rule_per_year": 12.6,
+   "hold_a_pct": 94.6,
+   "hold_b_pct": 68.6,
+   "both_pct": 81.6,
+   "switches": 37,
+   "switches_per_year": 9.5,
+   "monkey_median_pct": 67.5,
+   "beats_monkeys": 43,
+   "trust": "no edge",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 8.1,
+     "both": 5.3,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 34.2,
+     "both": 24.3,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 67.4,
+     "both": 100.3,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": -37.5,
+     "both": -31.1,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.25,
+    1.75,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "EWA-EWC",
+   "names": [
+    "Australia",
+    "Canada"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 68.0,
+   "rule_per_year": 14.2,
+   "hold_a_pct": 37.9,
+   "hold_b_pct": 83.5,
+   "both_pct": 60.7,
+   "switches": 30,
+   "switches_per_year": 7.7,
+   "monkey_median_pct": 48.6,
+   "beats_monkeys": 93,
+   "trust": "strong",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 16.2,
+     "both": 15.3,
+     "beat": true
+    },
+    {
+     "year": "2024",
+     "rule": 6.6,
+     "both": 8.0,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 22.4,
+     "both": 24.4,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 11.6,
+     "both": 4.6,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    1.5,
+    1.75,
+    2.0,
+    2.5
+   ],
+   "badge": "amber"
+  },
+  {
+   "id": "MGK-QQQ",
+   "names": [
+    "Mega-cap growth",
+    "Nasdaq 100"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 146.3,
+   "rule_per_year": 26.0,
+   "hold_a_pct": 138.9,
+   "hold_b_pct": 143.8,
+   "both_pct": 141.4,
+   "switches": 11,
+   "switches_per_year": 2.8,
+   "monkey_median_pct": 135.2,
+   "beats_monkeys": 87,
+   "trust": "promising",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 53.7,
+     "both": 54.3,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 29.5,
+     "both": 31.5,
+     "beat": false
+    },
+    {
+     "year": "2025",
+     "rule": 22.3,
+     "both": 21.0,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 4.4,
+     "both": 1.7,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.0,
+    2.5
+   ],
+   "badge": "amber"
+  },
+  {
+   "id": "SPY-IWM",
+   "names": [
+    "Big companies",
+    "Small companies"
+   ],
+   "kind": "twins",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 83.1,
+   "rule_per_year": 16.8,
+   "hold_a_pct": 96.8,
+   "hold_b_pct": 60.1,
+   "both_pct": 78.5,
+   "switches": 9,
+   "switches_per_year": 2.3,
+   "monkey_median_pct": 74.4,
+   "beats_monkeys": 70,
+   "trust": "meh",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 21.9,
+     "both": 22.1,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 25.2,
+     "both": 18.8,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 15.3,
+     "both": 15.3,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 5.3,
+     "both": 7.1,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "amber"
+  },
+  {
+   "id": "DIA-QQQ",
+   "names": [
+    "Dow",
+    "Nasdaq"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 87.3,
+   "rule_per_year": 17.5,
+   "hold_a_pct": 60.6,
+   "hold_b_pct": 143.8,
+   "both_pct": 102.2,
+   "switches": 22,
+   "switches_per_year": 5.6,
+   "monkey_median_pct": 88.8,
+   "beats_monkeys": 47,
+   "trust": "no edge",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 24.3,
+     "both": 36.0,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 28.7,
+     "both": 21.2,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 19.8,
+     "both": 18.1,
+     "beat": true
+    },
+    {
+     "year": "2026",
+     "rule": 1.0,
+     "both": 4.5,
+     "beat": false
+    }
+   ],
+   "bands_used": [
+    1.0,
+    1.5,
+    1.75,
+    2.0,
+    2.5
+   ],
+   "badge": "red"
+  },
+  {
+   "id": "TSLA-GM",
+   "names": [
+    "Tesla",
+    "GM"
+   ],
+   "kind": "opposites",
+   "from": "2022-12-23",
+   "to": "2026-11-24",
+   "test_years": 3.9,
+   "rule_pct": 268.2,
+   "rule_per_year": 39.7,
+   "hold_a_pct": 212.4,
+   "hold_b_pct": 152.7,
+   "both_pct": 182.5,
+   "switches": 10,
+   "switches_per_year": 2.6,
+   "monkey_median_pct": 174.8,
+   "beats_monkeys": 72,
+   "trust": "meh",
+   "years_beat_both": 2,
+   "years_total": 4,
+   "by_year": [
+    {
+     "year": "2023",
+     "rule": 26.5,
+     "both": 68.6,
+     "beat": false
+    },
+    {
+     "year": "2024",
+     "rule": 58.9,
+     "both": 55.9,
+     "beat": true
+    },
+    {
+     "year": "2025",
+     "rule": 37.1,
+     "both": 39.3,
+     "beat": false
+    },
+    {
+     "year": "2026",
+     "rule": 41.8,
+     "both": -4.9,
+     "beat": true
+    }
+   ],
+   "bands_used": [
+    2.5
+   ],
+   "badge": "amber"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+name: Trust test (one-off)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install yfinance pandas numpy
+      - run: python trust.py
+      - name: Save results
+        run: |
+          git config user.name "pears-bot"
+          git config user.email "pears-bot@users.noreply.github.com"
+          git add analysis
+          git commit -m "Trust test results" && git push

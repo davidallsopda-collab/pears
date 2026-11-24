@@ -1,0 +1,258 @@
+[
+ {
+  "a": "TSLA",
+  "b": "SPCX",
+  "na": "Tesla",
+  "nb": "SpaceX",
+  "group": "Musk",
+  "kind": "twins"
+ },
+ {
+  "a": "V",
+  "b": "MA",
+  "na": "Visa",
+  "nb": "Mastercard",
+  "group": "Payments",
+  "kind": "twins"
+ },
+ {
+  "a": "KO",
+  "b": "PEP",
+  "na": "Coca-Cola",
+  "nb": "Pepsi",
+  "group": "Drinks",
+  "kind": "twins"
+ },
+ {
+  "a": "XOM",
+  "b": "CVX",
+  "na": "Exxon",
+  "nb": "Chevron",
+  "group": "Oil",
+  "kind": "twins"
+ },
+ {
+  "a": "SHEL",
+  "b": "BP",
+  "na": "Shell",
+  "nb": "BP",
+  "group": "UK oil",
+  "kind": "twins"
+ },
+ {
+  "a": "HD",
+  "b": "LOW",
+  "na": "Home Depot",
+  "nb": "Lowe's",
+  "group": "DIY stores",
+  "kind": "twins"
+ },
+ {
+  "a": "NVDA",
+  "b": "AMD",
+  "na": "Nvidia",
+  "nb": "AMD",
+  "group": "AI chips",
+  "kind": "twins"
+ },
+ {
+  "a": "AVGO",
+  "b": "MRVL",
+  "na": "Broadcom",
+  "nb": "Marvell",
+  "group": "Custom chips",
+  "kind": "twins"
+ },
+ {
+  "a": "JPM",
+  "b": "BAC",
+  "na": "JPMorgan",
+  "nb": "Bank of America",
+  "group": "Banks",
+  "kind": "twins"
+ },
+ {
+  "a": "GS",
+  "b": "MS",
+  "na": "Goldman",
+  "nb": "Morgan Stanley",
+  "group": "Investment banks",
+  "kind": "twins"
+ },
+ {
+  "a": "LMT",
+  "b": "NOC",
+  "na": "Lockheed",
+  "nb": "Northrop",
+  "group": "Defence",
+  "kind": "twins"
+ },
+ {
+  "a": "UPS",
+  "b": "FDX",
+  "na": "UPS",
+  "nb": "FedEx",
+  "group": "Delivery",
+  "kind": "twins"
+ },
+ {
+  "a": "DAL",
+  "b": "UAL",
+  "na": "Delta",
+  "nb": "United",
+  "group": "Airlines",
+  "kind": "twins"
+ },
+ {
+  "a": "BHP",
+  "b": "RIO",
+  "na": "BHP",
+  "nb": "Rio Tinto",
+  "group": "Miners",
+  "kind": "twins"
+ },
+ {
+  "a": "PG",
+  "b": "CL",
+  "na": "P&G",
+  "nb": "Colgate",
+  "group": "Household",
+  "kind": "twins"
+ },
+ {
+  "a": "COST",
+  "b": "WMT",
+  "na": "Costco",
+  "nb": "Walmart",
+  "group": "Supermarkets",
+  "kind": "twins"
+ },
+ {
+  "a": "GOOGL",
+  "b": "GOOG",
+  "na": "Google A",
+  "nb": "Google C",
+  "group": "Same company",
+  "kind": "twins"
+ },
+ {
+  "a": "XOM",
+  "b": "FSLR",
+  "na": "Exxon",
+  "nb": "First Solar",
+  "group": "Oil v solar",
+  "kind": "opposites"
+ },
+ {
+  "a": "XLE",
+  "b": "ICLN",
+  "na": "Oil & gas",
+  "nb": "Clean energy",
+  "group": "Oil v green (funds)",
+  "kind": "opposites"
+ },
+ {
+  "a": "DAL",
+  "b": "XOM",
+  "na": "Delta",
+  "nb": "Exxon",
+  "group": "Airline v its fuel",
+  "kind": "opposites"
+ },
+ {
+  "a": "TSLA",
+  "b": "F",
+  "na": "Tesla",
+  "nb": "Ford",
+  "group": "EV v old school",
+  "kind": "opposites"
+ },
+ {
+  "a": "SPY",
+  "b": "GLD",
+  "na": "Stock market",
+  "nb": "Gold",
+  "group": "Stocks v gold",
+  "kind": "opposites"
+ },
+ {
+  "a": "SPY",
+  "b": "TLT",
+  "na": "Stock market",
+  "nb": "Bonds",
+  "group": "Stocks v bonds",
+  "kind": "opposites"
+ },
+ {
+  "a": "GLD",
+  "b": "IBIT",
+  "na": "Gold",
+  "nb": "Bitcoin",
+  "group": "Old v digital gold",
+  "kind": "opposites"
+ },
+ {
+  "a": "GLD",
+  "b": "GDX",
+  "na": "Gold",
+  "nb": "Gold miners",
+  "group": "Gold v gold miners",
+  "kind": "twins"
+ },
+ {
+  "a": "GLD",
+  "b": "GOLD",
+  "na": "Gold",
+  "nb": "Barrick",
+  "group": "Gold v a gold miner",
+  "kind": "twins"
+ },
+ {
+  "a": "GLD",
+  "b": "SLV",
+  "na": "Gold",
+  "nb": "Silver",
+  "group": "Precious metals",
+  "kind": "twins"
+ },
+ {
+  "a": "EWA",
+  "b": "EWC",
+  "na": "Australia",
+  "nb": "Canada",
+  "group": "Commodity countries",
+  "kind": "twins"
+ },
+ {
+  "a": "MGK",
+  "b": "QQQ",
+  "na": "Mega-cap growth",
+  "nb": "Nasdaq 100",
+  "group": "Big tech funds",
+  "kind": "twins"
+ },
+ {
+  "a": "SPY",
+  "b": "IWM",
+  "na": "Big companies",
+  "nb": "Small companies",
+  "group": "Big v small",
+  "kind": "twins"
+ },
+ {
+  "a": "DIA",
+  "b": "QQQ",
+  "na": "Dow",
+  "nb": "Nasdaq",
+  "group": "Old v new economy",
+  "kind": "opposites"
+ },
+ {
+  "a": "TSLA",
+  "b": "GM",
+  "na": "Tesla",
+  "nb": "GM",
+  "group": "EV v old school",
+  "kind": "opposites"
+ }
+]

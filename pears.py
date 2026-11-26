@@ -100,7 +100,7 @@ def summary_row(d, band=None):
     spark = [v for v in h["ratio"][-60:]]
     return {
         "id": d["id"], "a": d["a"], "b": d["b"], "names": d["names"], "group": d["group"], "kind": d.get("kind", "twins"),
-        "days": d["days"], "from": h["dates"][0],
+        "days": d["days"], "from": h["dates"][0], "last_date": d["last_date"],
         "z": d["z"], "signal": d["signal"],
         "corr": d["stats"]["corr"], "corr30": d["stats"]["corr30"], "half_life": d["half_life"],
         "best_band": band or r.get("best_band"), "now_holding": now,
@@ -112,11 +112,8 @@ def summary_row(d, band=None):
 
 
 def main():
-    is_scheduled = os.environ.get("GITHUB_EVENT_NAME") == "schedule"
-    if is_scheduled and not pairs.market_window_now():
-        print("Market closed - skipping Pears update.")
-        return 0
-
+    # Always update: GitHub's timer is unreliable, so any run that does fire should
+    # refresh the numbers (outside market hours that means the latest closing prices).
     with open(LIST_FILE, encoding="utf-8") as f:
         plist = json.load(f)
     close = load_all([s for p in plist for s in (p["a"], p["b"])])
@@ -139,7 +136,9 @@ def main():
         print("No pairs worked - keeping the old files.")
         return 1
     with open(os.path.join(OUT_DIR, "summary.json"), "w", encoding="utf-8") as f:
-        json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"), "pairs": rows},
+        json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                   "prices_date": max(r["last_date"] for r in rows), "market_open": pairs.market_window_now(),
+                   "pairs": rows},
                   f, separators=(",", ":"))
     return 0
 

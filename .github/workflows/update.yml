@@ -2,8 +2,9 @@ name: Update pairs
 
 on:
   schedule:
-    # every 15 minutes on weekdays; pears.py skips when the US market is shut
+    # every 15 minutes on weekdays, plus once after the close (GitHub often skips some)
     - cron: "*/15 13-21 * * 1-5"
+    - cron: "40 21 * * 1-5"
   workflow_dispatch:
 
 permissions:
